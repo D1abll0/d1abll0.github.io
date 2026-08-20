@@ -1,3 +1,6 @@
+import { discordSdk } from './discord.js';
+console.log(discordSdk);
+
 const boardTag = document.querySelector('#board');
 const keyboardTag = document.querySelector('#keyboard');
 const keyboardTemplateLatin = document.querySelector('#template-keyboard-latin');
