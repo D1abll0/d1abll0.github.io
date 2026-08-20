@@ -1,0 +1,133 @@
+@font-face
+{
+	font-family: 'Tahoma';
+	src: url('./tahoma.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 24 !important;
+	font-family: 'Tahoma';
+}
+
+body
+{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+	background: rgb(76, 88, 68);
+}
+
+header
+{
+	color: white;
+}
+
+main
+{
+	/*margin-right: auto;*/
+
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	user-select: none;
+	--cell-size: 50px;
+	--cell-gap: 5px;
+	--key-size: 1rem;
+	--key-gap: 7px;
+	--size-scale: 4;
+	--color-correct: rgb(68, 109, 0);
+	--color-present: rgb(95, 97, 0);
+	--color-absent: rgb(107, 7, 0);
+}
+
+#board
+{
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	margin-bottom: 50px;
+}
+
+#board>.row
+{
+	display: flex;
+	gap: 5px;
+}
+
+.cell
+{
+	width: var(--cell-size);
+	height: var(--cell-size);
+	text-align: center;
+	align-content: center;
+	color: white;
+	background: rgb(62, 70, 55);
+	border-top: 2px solid rgb(40 46 34);
+	border-left: 2px solid rgb(40 46 34);
+	box-shadow: 1px 1px 1px 1px rgb(136 145 128);
+}
+
+.cell.correct{ color: var(--color-correct); }
+.cell.present{ color: var(--color-present); }
+.cell.absent{ color: var(--color-absent); }
+
+#keyboard
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--key-gap)
+}
+
+#keyboard>.row
+{
+	display: flex;
+	gap: var(--key-gap)
+}
+
+.key
+{
+	font-size: 24px;
+	width: calc(var(--key-size) * var(--size-scale));
+	height: calc(var(--key-size) * var(--size-scale));
+	text-align: center;
+	align-content: center;
+	color: white;
+	background: rgb(76, 88, 68);
+	border-top: 2px solid rgb(136 145 128);
+	border-left: 2px solid rgb(136 145 128);
+	box-shadow: 1px 1px 1px 1px rgb(40 46 34);
+}
+
+.key.active
+{
+	border-top: 2px solid rgb(40 46 34);
+	border-left: 2px solid rgb(40 46 34);
+	box-shadow: 1px 1px 1px 1px rgb(136 145 128);
+}
+
+.key.correct{ background: var(--color-correct); }
+.key.present{ background: var(--color-present); }
+.key.absent{ background: var(--color-absent); }
+
+.key-enter
+{
+	width: 125px;
+}
+
+.key-remove
+{
+	width: 145px;
+}
